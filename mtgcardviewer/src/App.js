@@ -1,15 +1,23 @@
 import './App.css';
 //import react hooks below
 import { useState, useEffect } from "react"
-const URL = `https://api.magicthegathering.io/v1/cards`;
+
+import Home from './Components/Home';
+
+const home = () => {
+  let name = "Alex";
+
+/*const URL = `https://api.magicthegathering.io/v1/cards`;
 function App() {
 
 
-  const [cards, setCards] = useState([]);
-  const [activeCard, setActiveCard] = useState({});
 
-  
 
+  const [cards, setCards] = useState(null);
+  //const [activeCard, setActiveCard] = useState({});
+
+ */ 
+/* 
   useEffect(() => {
     const FetchData = async () => {
       const result= await fetch(URL)
@@ -28,18 +36,19 @@ function App() {
       
   setCards(filtered)
   
+*/
+//onclick event created
 
 // Expected output: Array ["exuberant", "destruction", "present"]
 
-      })
-    }
-    FetchData();
-  }, [])
+
   return (
-    <div className="App">
-      
+    <div className="home">
+      <h2>MTG Database</h2>
+      <p>{name}</p>
     </div>
   );
-}
+  } 
 
-export default App;
+
+export default Home;
