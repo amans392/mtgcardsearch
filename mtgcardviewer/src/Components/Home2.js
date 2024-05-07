@@ -1,5 +1,6 @@
 //current-video: https://www.youtube.com/watch?v=PHaECbrKgs0&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=11
 import { useState } from "react";
+import BlogList from "./Bloglist";
 
 const Home2  = () => {
     //destructuring value with array
@@ -15,14 +16,12 @@ const Home2  = () => {
     //always add key attribute to each item you output
     //outputs lists of data in react
     return ( 
+        //importing another component BlogList
+        //Then passing in props from Blogs into the BlogList component
+        //example bellow creates a property name blogs and sets it = {dynamic value}
+        // this passes in the blogs useState value which passes it into blogList as a prop
         <div className="home2">
-            {blogs.map((blog) => (
-                <div className="blog-preview" key={ blog.id }>
-                <h2>{ blog.title }</h2>
-                <p>written by {blog.author}</p>
-
-                </div>
-            ))}
+        <BlogList blogs={blogs} title="All blogs!"></BlogList>
         </div>
      );
 }
