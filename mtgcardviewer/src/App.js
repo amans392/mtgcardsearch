@@ -1,22 +1,24 @@
-import './App.css';
+//tutorial current time: https://youtu.be/NbTrGcz4DW8?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&t=195
+
+//import css styling at the top
 //import react hooks below
-import { useState, useEffect } from "react"
-
+import { useState, useEffect } from "react";
 import Home from './Components/Home';
-
-const home = () => {
-  let name = "Alex";
-
-/*const URL = `https://api.magicthegathering.io/v1/cards`;
-function App() {
+import Navbar from './Components/Navbar';
+import Home2 from "./Components/Home2";
 
 
 
 
-  const [cards, setCards] = useState(null);
+//const URL = `https://api.magicthegathering.io/v1/cards`;
+
+
+
+
+ // const [cards, setCards] = useState(null);
   //const [activeCard, setActiveCard] = useState({});
 
- */ 
+
 /* 
   useEffect(() => {
     const FetchData = async () => {
@@ -40,15 +42,20 @@ function App() {
 //onclick event created
 
 // Expected output: Array ["exuberant", "destruction", "present"]
-
-
+//Navbar and Home components nested in the return statement below app
+//using <Navbar /> and <Home />
+function App() {
+  
   return (
-    <div className="home">
-      <h2>MTG Database</h2>
-      <p>{name}</p>
+    <div className="app">
+      <Navbar />
+      <div className='content'>
+        <Home></Home>
+        <Home2></Home2>
+
+      </div>
     </div>
   );
-  } 
+  }
 
-
-export default Home;
+export default App;
