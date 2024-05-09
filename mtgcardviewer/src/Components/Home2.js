@@ -1,4 +1,4 @@
-//current-video: https://www.youtube.com/watch?v=qdCHEUaFhBk&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=17
+//current-video: https://www.youtube.com/watch?v=Jl4q2cccwf0&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=20
 //useEffect also imported then used above the return statement
 import { useState, useEffect } from "react";
 import BlogList from "./Bloglist";
@@ -9,6 +9,10 @@ const Home2  = () => {
     //state will be updating after data is fetched
     const[blogs, setBlogs] = useState(null);
 
+    //Conditional Loading Message state
+    const [isLoading, setIsLoading] = useState(true);
+    //error message state
+    const [error, setError] = useState(null);
     /*const[blogs, setBlogs] = useState([
         { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
         { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
@@ -60,15 +64,41 @@ const [name, setName] = useState('mario');
 //returning res.json() returns another promise that is async and gets the data
 //added another .then() function with (data) as the parameter that gets the data
 //returned by res.json() which is the api data
+//simulating a timeout request
+//wrapped fetch request in setTimout global function
+//https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+//to set a delay function of 1000 miliseconds or 1 second
+//before the fetch request is sent
+
+//catch block catches any kind of network error (err) and fires a function
+// .catch fires when the promise is rejected https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch
+//returns a failed to fetch message in the console if fetch fails
+//adding an if check !res to see if the ok response isn't okay and is false, throw an error
+//added a throw error message to the if ok response fails
 useEffect(() => {
-    fetch(URL)
-    .then(res => {
-        return res.json();
-    })
-    .then(data => {
-        console.log(data);
-        setBlogs(data);
-    });
+    setTimeout(() => {
+        fetch(URL)
+            .then(res => {
+        
+                if(!res.ok) {
+                    throw Error('could not fetch the data for that resource')
+                }
+                return res.json();
+            })
+            .then(data => {
+                console.log(data);
+                setBlogs(data);
+                //sets isLoading to false to remove if error displayed
+                setIsLoading(false);
+                //if data is fetched, gets rid of the error message if successful
+                setError(null);
+            })
+            .catch(err => {
+                setIsLoading(false)
+                //error.message displays the caught error message
+                setError(err.message);
+            })
+    }, 1000);
 }, []);
 
     //map method below created to cycle through array and create a new item for each item in the array
@@ -102,9 +132,11 @@ useEffect(() => {
        //added within brackets the blogs value followed by &&
        //value bloggs followed by && is conditional templating in React
        //blogs is set to null, value on right of is false && left is ouptut if true
-       //  
+       //&& means logical and
+       //added a conditional loading message defined above  
         <div className="home2">
-            
+            { error && <div>{ error } </div>}
+            { isLoading && <div>Loading...</div> } 
             {blogs &&<BlogList blogs={blogs} title="All blogs!"></BlogList>}
         </div>
      );
