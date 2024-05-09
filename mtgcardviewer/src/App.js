@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import Home2 from "./Components/Home2";
+import FetchData from "./Components/FetchData";
 
 
 
@@ -50,8 +51,8 @@ function App() {
     <div className="app">
       <Navbar />
       <div className='content'>
-        <Home></Home>
         <Home2></Home2>
+        <FetchData/>
 
       </div>
     </div>

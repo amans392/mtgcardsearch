@@ -5,11 +5,18 @@ import BlogList from "./Bloglist";
 
 const Home2  = () => {
     //destructuring value with array
-    const[blogs, setBlogs] = useState([
+    //fetching data with useEffect: https://www.youtube.com/watch?v=qdCHEUaFhBk&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=18
+    //state will be updating after data is fetched
+    const[blogs, setBlogs] = useState(null);
+
+    /*const[blogs, setBlogs] = useState([
         { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
         { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ]);
+    */
+
+const URL = 'http://localhost:8000/blogs'
 //Adding Dependencies
 //initial value 'mario'
 const [name, setName] = useState('mario');
@@ -25,10 +32,13 @@ const [name, setName] = useState('mario');
     //true if id does not match !== the id in the blog remains in array
     //false if id of blog matches ===  the id in the blog filtered out from array
     //then setblogs() will pass in the newBlogs value defined in the const
-    const handleDelete = (id) => {
+    
+    //HandleDelete Functionality
+    /*const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id)
         setBlogs(newBlogs)
-    };
+        */
+
 
 //useEffect() hook below that passes in an anonymous function 
 //useEffect runs after every render
@@ -37,11 +47,30 @@ const [name, setName] = useState('mario');
 //adding a , [] after the useEffect hook, makes it so that hook only runs after the first initial render
 
 //depenency [name] is set so that the useEffect will only run depending on tif this value is changed
-useEffect(() => {
+/*useEffect(() => {
     console.log('use effect ran');
     console.log(name);
     //console.log(blogs);
 }, [name]);
+*/
+
+//fetching data with useEffect and fetch() api
+//.then() will fire a promise once the fetch function has resolved
+//res is the response object
+//returning res.json() returns another promise that is async and gets the data
+//added another .then() function with (data) as the parameter that gets the data
+//returned by res.json() which is the api data
+useEffect(() => {
+    fetch(URL)
+    .then(res => {
+        return res.json();
+    })
+    .then(data => {
+        console.log(data);
+        setBlogs(data);
+    });
+}, []);
+
     //map method below created to cycle through array and create a new item for each item in the array
     //in template below using curley braces {}
     //using.map() method fires callback function for each item where each time it returns jsx template
@@ -63,10 +92,20 @@ useEffect(() => {
         //button created in return statement with onClick equal to anon function setName passing in new name 'luigi'
         //added a paragraph tag with referencing the name argument
         //setName changes 'mario' to 'luigi' when clicked
-        <div className="home2">
+        /*<div className="home2">
         <BlogList blogs={blogs} title="All blogs!" handleDelete={handleDelete}></BlogList>
-        <button onClick={() => setName('luigi')}>change name</button>
+        <button onClick={() => setName('luigi')}>change name</button>}
         <p>{ name }</p>
+        </div>
+        */
+       //use of {} around BlogList below in return statement to add javascript
+       //added within brackets the blogs value followed by &&
+       //value bloggs followed by && is conditional templating in React
+       //blogs is set to null, value on right of is false && left is ouptut if true
+       //  
+        <div className="home2">
+            
+            {blogs &&<BlogList blogs={blogs} title="All blogs!"></BlogList>}
         </div>
      );
 }

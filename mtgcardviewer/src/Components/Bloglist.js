@@ -4,7 +4,7 @@
 
 //handleDelete onClick function added to blog-list return statement below and defined in Home2
 //passed in data creation function to interact with data directly
-const BlogList = ({ blogs, title, handleDelete}) => {
+const BlogList = ({ blogs, title}) => {
 //const BlogList = (props) => {
     //const blogs below grabs the blogs and storing them in the const
     //const blogs = props.blogs;
@@ -20,13 +20,14 @@ const BlogList = ({ blogs, title, handleDelete}) => {
     //so it can interact with data directly
     return ( 
         //cycling through the const blogs below
+        //handleDelete Button removed: <button onClick={() => handleDelete(blog.id)}>delete blog</button>
         <div className="blog-list">
             <h2>{ title }</h2>
             {blogs.map((blog) => (
                 <div className="blog-preview" key={ blog.id }>
                 <h2>{ blog.title }</h2>
                 <p>written by {blog.author}</p>
-                <button onClick={() => handleDelete(blog.id)}>delete blog</button>
+                
                 
 
                 </div>
