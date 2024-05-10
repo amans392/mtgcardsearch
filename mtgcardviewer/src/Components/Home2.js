@@ -1,18 +1,28 @@
-//current-video: https://www.youtube.com/watch?v=Jl4q2cccwf0&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=20
+//current-video: https://www.youtube.com/watch?v=aZGzwEjZrXc&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=21
 //useEffect also imported then used above the return statement
-import { useState, useEffect } from "react";
+
+//import { useState, useEffect } from "react";
 import BlogList from "./Bloglist";
+import useFetch2 from "./UseFetch2";
+
+
 
 const Home2  = () => {
+    //endopint parameter variable URL created set equal to api link
+const URL = 'http://localhost:8000/blogs'
+//destructuring three returned properties from useFetch using {} brackets
+//adding : then a name after data tells code to grab data, but call it that name
+//example below grabs the data and calls it blogs
+//variable created with {} of the returned parameters from the custom hook useFetch
+//set equal to useFetch() custom hook passing through the API link in the URL variable
+
+//below are the three properties reutrned by useFetch Custom Hook
+const { data: blogs, isLoading, error } = useFetch2(URL)
+
     //destructuring value with array
     //fetching data with useEffect: https://www.youtube.com/watch?v=qdCHEUaFhBk&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=18
     //state will be updating after data is fetched
-    const[blogs, setBlogs] = useState(null);
-
-    //Conditional Loading Message state
-    const [isLoading, setIsLoading] = useState(true);
-    //error message state
-    const [error, setError] = useState(null);
+    
     /*const[blogs, setBlogs] = useState([
         { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
         { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
@@ -20,10 +30,10 @@ const Home2  = () => {
     ]);
     */
 
-const URL = 'http://localhost:8000/blogs'
+
 //Adding Dependencies
 //initial value 'mario'
-const [name, setName] = useState('mario');
+//const [name, setName] = useState('mario');
 
     //handleDelete function defined below for onClick function in Bloglist component
     //passes in the id property ()
@@ -75,31 +85,7 @@ const [name, setName] = useState('mario');
 //returns a failed to fetch message in the console if fetch fails
 //adding an if check !res to see if the ok response isn't okay and is false, throw an error
 //added a throw error message to the if ok response fails
-useEffect(() => {
-    setTimeout(() => {
-        fetch(URL)
-            .then(res => {
-        
-                if(!res.ok) {
-                    throw Error('could not fetch the data for that resource')
-                }
-                return res.json();
-            })
-            .then(data => {
-                console.log(data);
-                setBlogs(data);
-                //sets isLoading to false to remove if error displayed
-                setIsLoading(false);
-                //if data is fetched, gets rid of the error message if successful
-                setError(null);
-            })
-            .catch(err => {
-                setIsLoading(false)
-                //error.message displays the caught error message
-                setError(err.message);
-            })
-    }, 1000);
-}, []);
+
 
     //map method below created to cycle through array and create a new item for each item in the array
     //in template below using curley braces {}

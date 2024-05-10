@@ -1,10 +1,21 @@
-const cardLIst = ({ cards, name, imageUrl, id, originalText, artist }) => {
+const CardList = ({ cards, name, imageUrl, originalText }) => {
 
     return(
         <div className="card-list">
-            <img>{ imageURL }</img>
-            <h2></h2>
-            <p></p>
+            
+            <img alt="">{ imageUrl }</img>
+            {cards.map((card) => (
+                <div className="card-preview" key={ card.id }>
+                <h2>{ name }</h2>
+                <p>{ originalText }</p>
+                <p>{card.artist }</p>
+                </div>
+
+            ))}
+
+
         </div>
     )
 }
+
+export default CardList
