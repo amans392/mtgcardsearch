@@ -1,13 +1,13 @@
 //imported useFetch component
-import CardList from "./CardList";
+import CardList from "./Cardlist";
 import useFetch from "./UseFetch";
 //imported CardList componenet
 
-const Cardshome = () => {
+const Homes = () => {
     //Catches API in a const URL variable
 const URL = `https://api.magicthegathering.io/v1/cards`;
 
-const { data:cards } = useFetch(URL)
+const { data: cards } = useFetch(URL)
 
 return (
     <div className="cardshome">
@@ -18,4 +18,4 @@ return (
 
 }
 
-export default Cardshome;
+export default Homes;

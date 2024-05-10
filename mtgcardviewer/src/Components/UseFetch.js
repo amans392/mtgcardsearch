@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-//component for fetching data from the API
+//component for fetching data from the
 
 //variable for fetchData function
 const useFetch = (url) => {
@@ -25,13 +25,15 @@ const [data, setData] = useState(null);
         })
         .then(data => {
             console.log(data);
-            setData(data)
+            setData(data);
 
         });
 
     
     }, [url]);
+
+    console.log(data)
     return { data }
-}
+    }
  
 export default useFetch;
