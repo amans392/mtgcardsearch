@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 //component for fetching data from the
 
 //variable for fetchData function
-const useFetch = (url) => {
+const useFetch = async (url) => {
 
 
 
@@ -24,7 +24,7 @@ const [data, setData] = useState(null);
             return res.json();
         })
         .then(data => {
-            console.log(data);
+            console.log('card dada', data);
             setData(data);
 
         });
@@ -32,8 +32,8 @@ const [data, setData] = useState(null);
     
     }, [url]);
 
-    console.log(data)
-    return { data }
+    console.log('card data', data)
+    return data
     }
  
 export default useFetch;

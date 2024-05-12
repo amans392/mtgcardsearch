@@ -1,10 +1,10 @@
-const CardList = ({ cards,  imageUrl, originalText }) => {
-
+const Cards = ({ cards,  imageUrl, originalText }) => {
+    console.log('cardList Cards', cards)
     return(
         <div className="card-list">
             
             <img alt="">{ imageUrl }</img>
-            {data.cards.map((card) => (
+            {cards.map((card) => (
                 <div className="card-preview" key={ card.id }>
                 <h2>{ card.name }</h2>
                 <p>{ originalText }</p>
@@ -18,4 +18,4 @@ const CardList = ({ cards,  imageUrl, originalText }) => {
     )
 }
 
-export default CardList
+export default Cards;
