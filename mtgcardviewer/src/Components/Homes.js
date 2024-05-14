@@ -1,5 +1,5 @@
 //imported useFetch component
-import usefetch2 from "./UseFetch2"
+import usefetch2 from "./UseFetch"
 //imported Cards componenet
 import Cards from "./Cards";
 const Homes = () => {

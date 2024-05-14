@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import Home2 from "./Components/Home2";
 import Homes from "./Components/Homes";
+import FetchData from "./Components/FetchData";
 
 
 
@@ -51,8 +52,8 @@ function App() {
     <div className="app">
       <Navbar />
       <div className='content'>
-        <Home2></Home2>
-        <Homes/>
+      <FetchData></FetchData>
+
         
       </div>
     </div>
