@@ -16,33 +16,19 @@ function FetchData() {
         //store the data in cards variable
         setCard(await response.json())
     }
-
-
-// function FetchData() {
-//     URL = "https://api.magicthegathering.io/v1/cards"
-//     const [data, setData] = useState([])
-//     //fetching the data
-//     useEffect(()=> {
-//         fetch(URL)
-//         //sends a response
-//         .then(response => response.json())
-//         //stores the data in cards
-//         .then(data => 
-//             setData([data]))
-//         //catches the data
-//         .catch(err => console.log(err))
-//     }, [])
-//console.logging the data
+    
     return(
         <div>
             <h1>Card is listed here below</h1>
+            
             <ul className="list-card list-card-id">
             {Object.values(card).map(([data]) => {
                 return(
-                    <li className="list-card" key={data.id}> {data.name}</li>
+                    <li className="list-card" key={data.id}> {data.name} <img alt="" src={data.imageUrl} ></img>  </li>
                 )
+                
             })}
-
+                
             </ul>
 
         </div>
