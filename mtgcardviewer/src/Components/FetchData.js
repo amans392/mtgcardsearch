@@ -9,19 +9,21 @@ function FetchData() {
 //run cards function when page loads
     useEffect(() => {
         cards()
-    }, [])
+    }, []);
 //async/await to fetch data
     const cards = async () => {
         const response = await fetch(URL);
         //store the data in cards variable
         setCard(await response.json())
-    }
+    
+    };
     
     return(
         <div>
             <h1 className="card-header">Card is listed here below</h1>
             
             <ul className="set-card">
+                
             {Object.values(card).map(([data]) => {
                 return(
                     <li className="listed-card" key={data.id}> 

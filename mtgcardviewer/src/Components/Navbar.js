@@ -7,7 +7,6 @@ const Navbar = ( ) => {
             <h1> MTG Card Search App</h1>
             <div className="links">
                 <a href="/">Home</a>
-                <a href="/create">New Blog</a>
                 
             </div>
         </nav>
