@@ -19,12 +19,18 @@ function FetchData() {
     
     return(
         <div>
-            <h1>Card is listed here below</h1>
+            <h1 className="card-header">Card is listed here below</h1>
             
-            <ul className="list-card list-card-id">
+            <ul className="set-card">
             {Object.values(card).map(([data]) => {
                 return(
-                    <li className="list-card" key={data.id}> {data.name} <img alt="" src={data.imageUrl} ></img>  </li>
+                    <li className="listed-card" key={data.id}> 
+                    <h1>{data.name}</h1>
+                    <h2>{data.type}</h2>
+
+                    <img className="card-image" alt=""  src={data.imageUrl}></img> 
+                    <p>{data.setName}</p>
+                    </li>
                 )
                 
             })}
