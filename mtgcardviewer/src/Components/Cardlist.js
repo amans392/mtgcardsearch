@@ -8,7 +8,7 @@ const CardList = ({cards}) => {
     //mapped values of cards called card parameter
     return ( 
         <div className="card-list">
-            {cards.map((card) => (
+            {Object.values.cards.map((card) => (
                 <div className="card-preview" key={card.id}>
                     <h2>{card.name}</h2>
                     <p>This creature is a {card.type} with a CMC of {card.cmc}</p>
