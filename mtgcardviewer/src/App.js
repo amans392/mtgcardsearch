@@ -5,6 +5,7 @@
 import Navbar from './Components/Navbar';
 import FetchData from "./Components/FetchData";
 import Home from './Components/Home';
+import SearchBar from './Components/SearchBar';
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
@@ -14,8 +15,9 @@ function App() {
     <div className="app">
       <Navbar />
       <div className='content'>
+      <SearchBar></SearchBar>
       <Home></Home>
-
+      
         
       </div>
     </div>

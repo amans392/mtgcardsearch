@@ -6,6 +6,7 @@ const Home = () => {
     //added cards and setcards state values
     const URL = "https://api.magicthegathering.io/v1/cards"
     //de structuring properties from UseFetch return statement
+    //named the data returned in UseFetch to card  data: card
     const {data: card, isLoading} = useFetch(URL)
 
     // const [card, setCards] = useState(null);
