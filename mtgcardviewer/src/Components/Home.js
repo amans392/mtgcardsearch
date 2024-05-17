@@ -1,8 +1,8 @@
-//next step see useFectch Component https://www.youtube.com/watch?v=qdCHEUaFhBk&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=17
+//next step see useFectch Component https://youtu.be/qdCHEUaFhBk?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&t=341
 import { useState, useEffect } from "react";
 import CardList from "./Cardlist";
 const Home = () => {
-    const [cards, setCards] = useState([
+    const [card, setCards] = useState([
         // {name: "Strangleroot Geist", type: "spirit", cmc: 2, id: 1},
         // {name: "Llanowar Elf", type: "Elf", cmc: 1, id: 2},
         // {name: "Ghalta, Primal Hunger", type: "Dinosaur", cmc: 12, id:3},
@@ -27,22 +27,12 @@ const Home = () => {
         //returns a prommise
 
         }, [])
-
+        //creates a data fetch const variable using async
         const handleFetchData = async () => {
             const response = await fetch(URL);
-            const data = await response.json();
-            console.log(data);
+            //stores the json data as the setCards state value
+            setCards(await response.json());
         }
-    //     fetch(URL)
-    // //.then get the data and passes json into a js object and returns it as another promise
-    //     .then(res => {
-    //        return res.json()
-    //        //fires a function () => {} to get the data
-    //        .then((data) => {
-    //         console.log(data)
-    //         setCards(data)
-    //        });
-    // }, []);
     //map method used to cycle through the array of items above
     //return statement outputs the template to the browser
     //takes the cards property set equal to the array of cards with their properties name, type and cmc
@@ -53,7 +43,7 @@ const Home = () => {
     //now the component can see and use the cards variable props in the array
     return ( 
         <div className="Home">
-            {cards &&<CardList cards={cards}></CardList>}
+            {card && <CardList card={card}></CardList>}
         </div>
      );
 }

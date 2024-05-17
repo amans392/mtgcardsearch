@@ -13,7 +13,7 @@ function FetchData() {
 //async/await to fetch data
     const cards = async () => {
         const response = await fetch(URL);
-        //store the data in cards variable
+        //stored the data as the useState  setCard value
         setCard(await response.json())
     
     };
