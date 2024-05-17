@@ -2,6 +2,7 @@
 //alternative to passing in props via const CardList = ({cards}) =>
 //below is the de-structured version
 const CardList = ({card}) => {
+    console.log(Object.values(card))
     // created variable cards set equal to passed in props object .cards to store
     //const cards = props.cards;
     //then cycling through const cards in return statemen useing the cards.map function
@@ -13,7 +14,6 @@ const CardList = ({card}) => {
                     <h2>{data.name}</h2>
                     <img alt="" src={data.imageUrl}></img>
                     <p>This creature is a {data.type} with a CMC of {data.cmc}</p>
-                    
                 </div>
             ))}
 
