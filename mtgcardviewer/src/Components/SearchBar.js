@@ -1,5 +1,5 @@
 //Creating a search bar with API calls current-time
-//https://youtu.be/sWVgMcz8Q44?t=743
+//https://youtu.be/sWVgMcz8Q44?t=1160
 
 //creating a serach bar component
 //opened terminal and ran npm install react-icons for usage of icons
