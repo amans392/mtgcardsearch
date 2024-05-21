@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import FetchData from "./Components/FetchData";
 import Home from './Components/Home';
 import SearchBar from './Components/SearchBar';
+import CardSearchBar from './Components/CardSearchBar';
 import SearchResultsList from './Components/SearchResultsList';
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
@@ -20,9 +21,10 @@ const [results, setResults] = useState([]);
     <div className="app">
       <Navbar />
       <div className='content'>
-      <SearchBar setResults={setResults}></SearchBar>
+      {/* <SearchBar setResults={setResults}></SearchBar> */}
+      <CardSearchBar></CardSearchBar>
       <SearchResultsList results={results}></SearchResultsList>
-      <Home></Home>
+      {/* <Home></Home> */}
       
       
         

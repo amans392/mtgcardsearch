@@ -59,7 +59,7 @@ const Home = () => {
     //takes the cards property set equal to the array of cards with their properties name, type and cmc
     //return statement imported CardList component
     //set the cards property equal to cards variable
-    // then passed in the props parameter to CardList
+    // then passed in the props card parameter to CardList
     // then in CardList, created const variable cards set equal to passed in props.cards value
     //now the component can see and use the cards variable props in the array
     //logial && added so that card state will be null unless the data is available from CardLIst to load
