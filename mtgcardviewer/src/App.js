@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import FetchData from "./Components/FetchData";
 import Home from './Components/Home';
 import SearchBar from './Components/SearchBar';
+import SearchResultsList from './Components/SearchResultsList';
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
@@ -14,14 +15,15 @@ function App() {
 //state variable results created for search bar
 //
 const [results, setResults] = useState([]);
-
+//passed in results variable as a prop in SearchResultsList
   return (
     <div className="app">
       <Navbar />
       <div className='content'>
       <SearchBar setResults={setResults}></SearchBar>
-      <div>SearchResults</div>
+      <SearchResultsList results={results}></SearchResultsList>
       <Home></Home>
+      
       
         
       </div>

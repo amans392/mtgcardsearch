@@ -31,7 +31,7 @@
 
 
 
-blog preview / list
+/*card preview / list */
 .card-preview {
   padding: 10px 16px;
   margin: 20px 0;
@@ -50,4 +50,12 @@ blog preview / list
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
