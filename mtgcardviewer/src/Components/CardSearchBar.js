@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 //imported FaSearch to add the search magnifying glass to input field
 import { FaSearch } from "react-icons/fa";
 
-import useFetch from "./UseFetch";
+import "./CardSearchBar.css"
 //taking in the setResults prop defined in app.js
 const CardSearchBar = ({ setResults }) => { 
     //added state variable and state setter function
