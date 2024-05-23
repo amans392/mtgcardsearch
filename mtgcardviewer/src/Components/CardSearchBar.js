@@ -6,8 +6,7 @@ import { FaSearch } from "react-icons/fa";
 
 import useFetch from "./UseFetch";
 
-const CardSearchBar = () => {
-
+const CardSearchBar = ({setResults}) => { 
     //added state variable and state setter function
 
 
@@ -18,70 +17,64 @@ const CardSearchBar = () => {
     //stored API in variable URL
     const URL = "https://api.magicthegathering.io/v1/cards"
     
-    useEffect(() => {
-        const FetchData = (data) => {
-            fetch(URL)
-            .then((response) => response.json()
-            .then((data) => {
-                 console.log((data))
-                const results =  (data).filter(([card]) => {
-                    return (
-                        data
-                        // data.name &&
-                        // data.name.toLowerCase().includes(data)
-                        
-                        )
-                        
-                });
-                console.log(results);  
-            })
-        )};
+    //takes in value which is text to search for
+    const FetchData = (value) => {
+        //calls the API stored in URL variable to fetch data
+        fetch(URL)
+        //gets back the data response as json data
+        .then((response) => response.json())
+        //takes the json data, and filters the it
+        //Then stores the data in variable Results
+        .then((json) => {
+            //json.filter takes the json data and filters through it
+            //return true if it matches text inside input element
+            //return false if no match
+            const results = json.cards.filter((card) => {
+                return (
+                    //checks if value is given by user if not, nothing is rendered
+                    value &&
+                    //checks card if card exists at current index
+                   card && 
+                   //check if card has a name
+                   card.name.toLowerCase()
+                   //then checks if user name converted to lowercase  includes value entered in search field
+                   && card.name.toLowerCase().includes(value)
+
+                )
+            });
+            console.log(results)
+        });
     }
-    )
- 
-
-    //fetching data from mtg API
-
-    // const FetchData = (value) => {
-    //     //Fetching data from API
-    //     fetch(URL)
-    //     //chained .then to await response result that returns a value later in time of api call
-    //     //takes response and converts it into the json format to be ready by javascript
-    //     .then((response) => response.json())
-    //     //chained another .then get back the json value and console.log the value
-    //     .then((json) => {
-    //         //filtering json data
-    //         const results = json.filter((card) => {
-    //             //checks if card has a name
-    //             //then convert name to lowercase
-    //             return card && 
-    //             card.name && 
-    //             card.name.toLowerCase().includes(value);
-    //         });
-    //         console.log(results);
-    //         console.log(json);
-    //     })
-    //     }
     
-    //created a handleChange function that takes in a value
-    const handleChange = (data) => {
-        //sets the input variable to the given value
-        setInput(data)
-        //then passes value to fetchData function and makes a request to the API;
-    }
-        
+    //handleChange function created to take in input value
+    //then pass in value to fetchData function above
+    //then makes the revevant API call
+    const handleChange = (value) => {
+        //takes in value of the input which is typed into the search bar
+        setInput(value)
+        //then passes in value to fetchData function
+        //Which makes request to API
+        FetchData(value)
+    } 
+
+
     return ( 
         <div className="input-wrapper">
             {/* added a search icon  to the search bar */}
             <FaSearch id="search-icon"></FaSearch>
-            {/* added an input field with Type to Search Placeholder text 
-            added value property and set equal to input state variable above
+            {/* added an input field with placeholder text
+            added value property and set equal to input variable "state" above
             added onChange event to set input variable to value inside input element using e.target.value
             set Defined HandleChange function above, then set onChange function to handleChange below for value setting and api calling*/}
-            <input placeholder="Type to search.." data={input} onChange={(e) => handleChange(e.target.data)}></input>
-            <h1>{input}</h1>
+            <input placeholder="Type to search.." 
+            value={input} 
+            // handleChange function defined above
+            //now changing text will make a request to the fetchData API
+            onChange={(e) => handleChange(e.target.value)}></input>
             </div>
-     );
+    )
 }
+
+
  
 export default CardSearchBar;

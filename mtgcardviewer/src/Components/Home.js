@@ -67,7 +67,7 @@ const Home = () => {
     return ( 
         <div className="Home">
             { isLoading && <div> Loading...</div> }
-            {card && <CardList card={card}></CardList>}
+            {/* {card && <CardList card={card}></CardList>} */}
         </div>
      );
 }

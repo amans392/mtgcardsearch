@@ -44,7 +44,7 @@ const SearchBar = ({setResults}) => {
     }
 
     const handleChange = (value) => {
-        setInput(value)
+        setInput(value.toLowerCase())
         FetchData(value)
     }
     return ( 
