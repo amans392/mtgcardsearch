@@ -1,0 +1,7 @@
+.card-result {
+    padding: 10px 20px;
+}
+
+.card-result:hover {
+    background-color: #efefef;
+}

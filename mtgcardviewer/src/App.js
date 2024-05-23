@@ -3,27 +3,28 @@
 import { useState } from 'react';
 //import react hooks below
 import Navbar from './Components/Navbar';
-import FetchData from "./Components/FetchData";
 import Home from './Components/Home';
-import SearchBar from './Components/SearchBar';
 import CardSearchBar from './Components/CardSearchBar';
-import SearchResultsList from './Components/SearchResultsList';
+import CardResultsList from './Components/CardResultsList';
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
 function App() {
 
-//state variable results created for search bar
-//
+
+// create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
 //passed in results variable as a prop in SearchResultsList
   return (
     <div className="app">
       <Navbar />
       <div className='content'>
-      {/* <SearchBar setResults={setResults}></SearchBar> */}
-      <CardSearchBar></CardSearchBar>
-      <SearchResultsList results={results}></SearchResultsList>
+      {/* passed in setResults variable and modifier defined above as a prop equal to setResults
+      //then in CardSearchBar, take it in as prop */}
+      
+      <CardSearchBar setResults={setResults}></CardSearchBar>
+      {/* passed in results variable as prop into CardResultsList below */}
+      <CardResultsList results={results} ></CardResultsList>
       {/* <Home></Home> */}
       
       

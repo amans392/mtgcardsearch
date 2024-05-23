@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 import useFetch from "./UseFetch";
-
-const CardSearchBar = ({setResults}) => { 
+//taking in the setResults prop defined in app.js
+const CardSearchBar = ({ setResults }) => { 
     //added state variable and state setter function
 
 
@@ -42,7 +42,10 @@ const CardSearchBar = ({setResults}) => {
 
                 )
             });
-            console.log(results)
+            //passed in setResults variable
+            //sets results variable to what we get back from API call and stored in App.js results variable
+            setResults(results);
+            // console.log(results)
         });
     }
     
