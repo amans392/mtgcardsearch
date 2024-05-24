@@ -25,7 +25,7 @@ const [results, setResults] = useState([]);
       <CardSearchBar setResults={setResults}></CardSearchBar>
       {/* passed in results variable as prop into CardResultsList below */}
       <CardResultsList results={results} ></CardResultsList>
-      {/* <Home></Home> */}
+      <Home></Home>
       
       
         

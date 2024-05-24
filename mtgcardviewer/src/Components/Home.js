@@ -7,8 +7,9 @@ const Home = () => {
     const URL = "https://api.magicthegathering.io/v1/cards"
     //de structuring properties from UseFetch return statement
     //named the data returned in UseFetch to card  data: card
-    const {data: card, isLoading} = useFetch(URL)
+    const {data: card, isLoading} = useFetch(URL);
 
+    
     // const [card, setCards] = useState(null);
     //     // {name: "Strangleroot Geist", type: "spirit", cmc: 2, id: 1},
     //     // {name: "Llanowar Elf", type: "Elf", cmc: 1, id: 2},
@@ -67,7 +68,7 @@ const Home = () => {
     return ( 
         <div className="Home">
             { isLoading && <div> Loading...</div> }
-            {/* {card && <CardList card={card}></CardList>} */}
+            {card && <CardList card={card}></CardList>}
         </div>
      );
 }
