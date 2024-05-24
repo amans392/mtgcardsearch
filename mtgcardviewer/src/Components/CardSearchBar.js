@@ -36,9 +36,9 @@ const CardSearchBar = ({ setResults }) => {
                     //checks card if card exists at current index
                    card && 
                    //check if card has a name
-                   card.name.toLowerCase()
+                   card.name &&
                    //then checks if user name converted to lowercase  includes value entered in search field
-                   && card.name.toLowerCase().includes(value)
+                    card.name.toLowerCase().includes(value)
 
                 )
             });
@@ -54,10 +54,11 @@ const CardSearchBar = ({ setResults }) => {
     //then makes the revevant API call
     const handleChange = (value) => {
         //takes in value of the input which is typed into the search bar
-        setInput(value)
+        setInput(value);
         //then passes in value to fetchData function
         //Which makes request to API
-        FetchData(value)
+        //added toLowerCase() to fix case sensivity issue when searching cards
+        FetchData(value.toLowerCase());
     } 
 
 

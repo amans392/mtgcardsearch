@@ -12,7 +12,7 @@ import "./SearchBar.css"
 //in SearchBartaking function,  
 const SearchBar = ({setResults}) => {
     //created a state varialbes input and set input equal to useState('') empty string
-    const [input, setInput ] = useState('')
+    const [input, setInput ] = useState('').toLowerCase()
 
     // FetchData variable below is used for fetching data from external API
     // fetch function is asynch, then chain a .then then convert the response into the json format
@@ -28,7 +28,8 @@ const SearchBar = ({setResults}) => {
                     value &&
                     user &&
                     user.name &&
-                    user.name.toLowerCase().includes(value) )
+                    user.name.toLowerCase().includes(value)
+                    )
             });
 
             //console.log(results);
@@ -44,7 +45,7 @@ const SearchBar = ({setResults}) => {
     }
 
     const handleChange = (value) => {
-        setInput(value.toLowerCase())
+        setInput(value)
         FetchData(value)
     }
     return ( 
