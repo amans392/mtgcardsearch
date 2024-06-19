@@ -11,9 +11,10 @@ import useFetch from './Components/UseFetch';
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
 function App() {
-
+  //stores API in URL state variable
   const [url, setURL] = useState('https://api.magicthegathering.io/v1/cards') 
 
+  //passes in data fetched from useFetch hook
   const { data, isPending, error } = useFetch(url);
 // create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
@@ -32,6 +33,7 @@ const [results, setResults] = useState([]);
         {isPending && <div>Loading....</div>}
       {error && <div>{error}</div>}
       
+
       <div className="card-list">
         {data && data.cards.map((card) => (
           <div>
