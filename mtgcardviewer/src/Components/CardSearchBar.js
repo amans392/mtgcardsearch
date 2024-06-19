@@ -29,7 +29,7 @@ const CardSearchBar = ({ setResults }) => {
             //json.filter takes the json data and filters through it
             //return true if it matches text inside input element
             //return false if no match
-            const results = json.cards.filter((card) => {
+            const results = json.cards.filter(card => {
                 return (
                     //checks if value is given by user if not, nothing is rendered
                     value &&
@@ -38,7 +38,7 @@ const CardSearchBar = ({ setResults }) => {
                    //check if card has a name
                    card.name &&
                    //then checks if user name converted to lowercase  includes value entered in search field
-                    card.name.toLowerCase().includes(value)
+                   card.name.toLowerCase().includes(value)
 
                 )
             });
@@ -61,7 +61,6 @@ const CardSearchBar = ({ setResults }) => {
         FetchData(value.toLowerCase());
     } 
 
-
     return ( 
         <div className="input-wrapper">
             {/* added a search icon  to the search bar */}
@@ -75,6 +74,7 @@ const CardSearchBar = ({ setResults }) => {
             // handleChange function defined above
             //now changing text will make a request to the fetchData API
             onChange={(e) => handleChange(e.target.value)}></input>
+            
             </div>
     )
 }

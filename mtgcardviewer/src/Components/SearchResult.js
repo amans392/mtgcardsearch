@@ -8,7 +8,8 @@ const SearchResult = ({result}) => {
         //returns result.name which is the name of the current user at the specific index
         //added onClick functionality for whenever a result is clicked
         //grabs the click event (e) and adds an alert message `You clicked on X` with the clicked on result.name 
-        <div className="search-result" onClick={(e) => alert(`You clicked on ${result.name}`) }>{result.name}</div>
+        <div className="search-result" onClick={(e) => alert(`You clicked on ${result.name}`)}>
+        </div>
      );
 }
  

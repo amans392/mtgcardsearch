@@ -1,4 +1,6 @@
 //reusable component to output card property data
+
+import useFetch from "./UseFetch";
 //alternative to passing in props via const CardList = ({cards}) =>
 //below is the de-structured version
 const CardList = ({card}) => {
@@ -13,7 +15,7 @@ const CardList = ({card}) => {
                 <div className="card-preview" key={data.id}>
                     <h2>{data.name}</h2>
                     <img alt="" src={data.imageUrl}></img>
-                    <p>This creature is a {data.type} with a CMC of {data.cmc}</p>
+                    {/* <p>This creature is a {data.type} with a CMC of {data.cmc}</p> */}
                 </div>
             ))}
 

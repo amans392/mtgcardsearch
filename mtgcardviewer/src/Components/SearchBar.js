@@ -59,6 +59,7 @@ const SearchBar = ({setResults}) => {
     
     <input placeholder="Type to search..." value={input} onChange={(e) => handleChange(e.target.value)} ></input>
     
+    <div></div>
     </div> 
     
     
