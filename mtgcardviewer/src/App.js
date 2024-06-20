@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Navbar from './Components/Navbar';
 import CardSearchBar from './Components/CardSearchBar';
 import CardResultsList from './Components/CardResultsList';
-//imported useFetch custom hook
+//imported useFetch custom hook for api data fetching
 import useFetch from './Components/UseFetch';
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
@@ -15,7 +15,7 @@ function App() {
   const [url, setURL] = useState('https://api.magicthegathering.io/v1/cards') 
 
   //passes in data fetched from useFetch hook
-  const { data, isPending, error } = useFetch(url);
+  const { data, isLoading, error } = useFetch(url);
 // create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
 //passed in results variable as a prop in SearchResultsList
@@ -30,13 +30,14 @@ const [results, setResults] = useState([]);
       <CardResultsList results={results} ></CardResultsList>
       {/* <Displaycards></Displaycards> */}
         <h1>Name of Cards</h1>
-        {isPending && <div>Loading....</div>}
+        
       {error && <div>{error}</div>}
       
 
       <div className="card-list">
+      {isLoading && <div>Loading...</div>}
         {data && data.cards.map((card) => (
-          <div>
+          <div key={card.id}>
             <h2>{card.name}</h2>
             <img alt="" src={card.imageUrl}></img>
             </div>

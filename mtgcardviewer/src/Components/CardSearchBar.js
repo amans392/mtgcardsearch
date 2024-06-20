@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 //current-time: https://youtu.be/sWVgMcz8Q44?t=993
 //stackoverflow link potential solution: https://stackoverflow.com/questions/70676941/filter-is-not-a-function-in-react-js
 //imported FaSearch to add the search magnifying glass to input field
 import { FaSearch } from "react-icons/fa";
+
+import useFetch from "./UseFetch";
 
 import "./CardSearchBar.css"
 //taking in the setResults prop defined in app.js
@@ -14,21 +16,25 @@ const CardSearchBar = ({ setResults }) => {
     //created input variable and setInput function set equal to useState of an empty array
     const [input, setInput ] = useState("");
     //variable value and function SetValue to store value data from API
-    //stored API in variable URL
-    const URL = "https://api.magicthegathering.io/v1/cards"
-    
+    //passed in mtg API as url variable to UseFetch
+    const [url] = useState('https://api.magicthegathering.io/v1/cards') 
+
+    //using returned data fetched from the url to use in search bar
+    const { data: json} = useFetch(url);
+
     //takes in value which is text to search for
-    const FetchData = (value) => {
-        //calls the API stored in URL variable to fetch data
-        fetch(URL)
-        //gets back the data response as json data
-        .then((response) => response.json())
-        //takes the json data, and filters the it
-        //Then stores the data in variable Results
-        .then((json) => {
-            //json.filter takes the json data and filters through it
-            //return true if it matches text inside input element
-            //return false if no match
+    const filterCard = (value) => {
+        // //calls the API stored in URL variable to fetch data
+        // fetch(URL)
+        // //gets back the data response as json data
+        // .then((response) => response.json())
+        // //takes the json data, and filters the it
+        // //Then stores the data in variable Results
+        // .then((json) => {
+        //     //json.filter takes the json data and filters through it
+        //     //return true if it matches text inside input element
+        //     //return false if no match
+        //     const results = json.cards.filter(card => {
             const results = json.cards.filter(card => {
                 return (
                     //checks if value is given by user if not, nothing is rendered
@@ -46,8 +52,8 @@ const CardSearchBar = ({ setResults }) => {
             //sets results variable to what we get back from API call and stored in App.js results variable
             setResults(results);
             // console.log(results)
-        });
-    }
+        };
+    
     
     //handleChange function created to take in input value
     //then pass in value to fetchData function above
@@ -58,8 +64,8 @@ const CardSearchBar = ({ setResults }) => {
         //then passes in value to fetchData function
         //Which makes request to API
         //added toLowerCase() to fix case sensivity issue when searching cards
-        FetchData(value.toLowerCase());
-    } 
+        filterCard(value.toLowerCase());
+    }
 
     return ( 
         <div className="input-wrapper">

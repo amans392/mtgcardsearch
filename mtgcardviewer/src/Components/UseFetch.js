@@ -19,30 +19,35 @@ const useFetch = (url) => {
     //adding fetch request under useEffect hook
     useEffect(() => {
         //adding a setTimout function with a 1 second delay to display loading before card data
+        //set loading bar message prior to loading fetched data
+        setIsLoading(true)
         setTimeout(() => {
-            console.log("useEffect Ran")
+            console.log("useEffect Ran");
             //added error checking in case API cannot be reached
             try {
                 handleFetchData();
-            setIsLoading(false);
+                
             setError(null);
             } catch (error) {
                 setError(`${error} Could not Fetch Data `);
             }
+            
             //sending git request to the API
             //returns a prommise
-        }
-        , 500)
+        }, 400)
     //added url as a dependency
         }, [url])
         //creates a data fetch const variable using async
         const handleFetchData = async () => {
             const response = await fetch(url);
-            if (!response.ok) throw new Error(response.statusText);
 
+            if (!response.ok) throw new Error(response.statusText);
+            //removes loading message once data is fetched and displayed
+            setIsLoading(false)
             //stores the json data as the setData state value
             setData(await response.json()
             );
+
             
             
         }
