@@ -1,4 +1,5 @@
 import CardResults from "./CardResults";
+import displayCards from "./DisplayCard";
 import "./CardResultsList.css"
 
 //passed in results property from App.js that was passed in
@@ -13,7 +14,7 @@ const CardResultsList = ({results}) => {
                 // return <div key={id}>{result.name}</div>
                 //returns the CardResults Component which creates a div with results
                 return <CardResults result={result} key={id}/>
-                
+       
             })
         }
     </div>

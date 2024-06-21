@@ -34,7 +34,7 @@ const [results, setResults] = useState([]);
       {error && <div>{error}</div>}
       
 
-      <div className="card-list">
+      {/* <div className="card-list">
       {isLoading && <div>Loading...</div>}
         {data && data.cards.map((card) => (
           <div key={card.id}>
@@ -42,7 +42,7 @@ const [results, setResults] = useState([]);
             <img alt="" src={card.imageUrl}></img>
             </div>
         ))}
-      </div>
+      </div> */}
 
       {/* {data && data.cards.map((card) => <p key={card.id}>{card.name}</p>)}
       {data && data.cards.map((card) =>  <img alt="" src={card.imageUrl}></img>)} */}
