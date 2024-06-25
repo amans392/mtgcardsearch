@@ -1,13 +1,19 @@
-//follow video below for custom hook
-//https://www.youtube.com/watch?v=si3AZsAkZlE
+import React,  {useState} from 'react'
+import FindCard from './Findcard'
+const DisplayCard = ({results}) => {
 
-const displayCard = ({result}) => {
-
-    return  <div key={result.id} >
-    <h2>{result.name}</h2>
-    <img alt="" src={result.imageUrl}></img>
-    </div>
-
+    return  (     
+        <div className="displayed-cards">
+            {
+                results.map((result, id) => {
+                    return (
+                    <FindCard result={result} key={id}></FindCard>
+                    )
+                })
+            }
+        </div>
+    )
+    
 }
 
-export default displayCard;
+export default DisplayCard;

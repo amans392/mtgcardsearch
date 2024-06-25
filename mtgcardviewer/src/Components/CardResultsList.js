@@ -1,6 +1,6 @@
 import CardResults from "./CardResults";
-import displayCards from "./DisplayCard";
 import "./CardResultsList.css"
+import FindCard from "./Findcard";
 
 //passed in results property from App.js that was passed in
 const CardResultsList = ({results}) => {

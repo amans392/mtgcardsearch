@@ -7,6 +7,7 @@ import CardSearchBar from './Components/CardSearchBar';
 import CardResultsList from './Components/CardResultsList';
 //imported useFetch custom hook for api data fetching
 import useFetch from './Components/UseFetch';
+import DisplayCard from './Components/DisplayCard';
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
@@ -28,9 +29,9 @@ const [results, setResults] = useState([]);
       <CardSearchBar setResults={setResults}></CardSearchBar>
       {/* passed in results variable as prop into CardResultsList below */}
       <CardResultsList results={results} ></CardResultsList>
-      {/* <Displaycards></Displaycards> */}
-        <h1>Name of Cards</h1>
-        
+        <h1>List of Selected Cards</h1>
+        <DisplayCard results={results} />
+       
       {error && <div>{error}</div>}
       
 

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-//current-time: https://youtu.be/sWVgMcz8Q44?t=993
-//stackoverflow link potential solution: https://stackoverflow.com/questions/70676941/filter-is-not-a-function-in-react-js
 //imported FaSearch to add the search magnifying glass to input field
 import { FaSearch } from "react-icons/fa";
 
@@ -45,7 +43,6 @@ const CardSearchBar = ({ setResults }) => {
                    card.name &&
                    //then checks if user name converted to lowercase  includes value entered in search field
                    card.name.toLowerCase().includes(value)
-
                 )
             });
             //passed in setResults variable
@@ -82,7 +79,9 @@ const CardSearchBar = ({ setResults }) => {
             onChange={(e) => handleChange(e.target.value)}></input>
             
             </div>
+
     )
+
 }
 
 
