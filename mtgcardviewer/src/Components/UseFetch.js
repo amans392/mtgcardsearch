@@ -34,7 +34,7 @@ const useFetch = (url) => {
             
             //sending git request to the API
             //returns a prommise
-        }, 400)
+        },20)
     //added url as a dependency
         }, [url])
         //creates a data fetch const variable using async

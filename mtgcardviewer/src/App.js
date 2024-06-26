@@ -1,5 +1,6 @@
-//tutorial current time: https://youtu.be/NbTrGcz4DW8?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&t=195
-
+//try selectable options from video: https://www.youtube.com/watch?v=GomD1Udf4WQ
+//also see https://www.youtube.com/watch?v=3u_ulMvTYZI
+//also https://www.youtube.com/watch?v=1cYnbYVAi_E
 import { useState } from 'react';
 //import react hooks below
 import Navbar from './Components/Navbar';
@@ -13,12 +14,17 @@ import DisplayCard from './Components/DisplayCard';
 //using <Navbar /> and <Home />
 function App() {
   //stores API in URL state variable
-  const [url, setURL] = useState('https://api.magicthegathering.io/v1/cards') 
+  const [url] = useState('https://api.magicthegathering.io/v1/cards') 
 
   //passes in data fetched from useFetch hook
-  const { data, isLoading, error } = useFetch(url);
+  const {error } = useFetch(url);
 // create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
+
+//PROVIDE setACTIVECARD to the list that's making the click event
+//Then displaycard to be aware of the state with ActiveCard
+const [activeCard, setActiveCard] = useState([null]);
+
 //passed in results variable as a prop in SearchResultsList
   return (
     <div className="app">
@@ -28,9 +34,9 @@ const [results, setResults] = useState([]);
       //then in CardSearchBar, take it in as prop */}
       <CardSearchBar setResults={setResults}></CardSearchBar>
       {/* passed in results variable as prop into CardResultsList below */}
-      <CardResultsList results={results} ></CardResultsList>
+      <CardResultsList results={results} setActiveCard={setActiveCard} ></CardResultsList>
         <h1>List of Selected Cards</h1>
-        <DisplayCard results={results} />
+        <DisplayCard results={results} activeCard={activeCard} />
        
       {error && <div>{error}</div>}
       

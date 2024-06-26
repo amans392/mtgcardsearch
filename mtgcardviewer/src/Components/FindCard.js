@@ -1,9 +1,8 @@
 
 //tutorial may hold clue on getting component to work:
 //https://www.youtube.com/watch?v=9wiWzu_tRB0
-import { useState } from "react";
-
-const findCard = ({result}) => {
+import "./FindCard.css"
+const FindCard = ({result, activeCard}) => {
   
     return ( 
         <div className="selected-card">
@@ -15,4 +14,4 @@ const findCard = ({result}) => {
      );
 }
  
-export default findCard;
+export default FindCard;

@@ -21,6 +21,7 @@ const CardSearchBar = ({ setResults }) => {
     const { data: json} = useFetch(url);
 
     //takes in value which is text to search for
+    
     const filterCard = (value) => {
         // //calls the API stored in URL variable to fetch data
         // fetch(URL)
@@ -35,8 +36,11 @@ const CardSearchBar = ({ setResults }) => {
         //     const results = json.cards.filter(card => {
             const results = json.cards.filter(card => {
                 return (
-                    //checks if value is given by user if not, nothing is rendered
-                    value &&
+                   
+                //checks if value is given by user if not, nothing is rendered
+                value &&
+                   
+
                     //checks card if card exists at current index
                    card && 
                    //check if card has a name
@@ -51,7 +55,7 @@ const CardSearchBar = ({ setResults }) => {
             // console.log(results)
         };
     
-    
+
     //handleChange function created to take in input value
     //then pass in value to fetchData function above
     //then makes the revevant API call
@@ -65,6 +69,8 @@ const CardSearchBar = ({ setResults }) => {
     }
 
     return ( 
+
+        
         <div className="input-wrapper">
             {/* added a search icon  to the search bar */}
             <FaSearch id="search-icon"></FaSearch>

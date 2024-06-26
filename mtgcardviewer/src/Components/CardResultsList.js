@@ -1,9 +1,8 @@
 import CardResults from "./CardResults";
 import "./CardResultsList.css"
-import FindCard from "./Findcard";
 
 //passed in results property from App.js that was passed in
-const CardResultsList = ({results}) => {
+const CardResultsList = ({results, setActiveCard}) => {
     return <div className="results-list">
         {/* brackets added so you can code between them 
         //results.map goes through each element inside results array
@@ -13,7 +12,8 @@ const CardResultsList = ({results}) => {
                 //returns a div with it's own key and contains {result.name}
                 // return <div key={id}>{result.name}</div>
                 //returns the CardResults Component which creates a div with results
-                return <CardResults result={result} key={id}/>
+                return <CardResults  result={result} setActiveCard={setActiveCard} key={id}/>
+                
        
             })
         }
