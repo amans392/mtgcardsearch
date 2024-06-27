@@ -23,7 +23,14 @@ const [results, setResults] = useState([]);
 
 //PROVIDE setACTIVECARD to the list that's making the click event
 //Then displaycard to be aware of the state with ActiveCard
-const [activeCard, setActiveCard] = useState([null]);
+const [activeCard, setActiveCard] = useState(null);
+
+const handleSelection = (card) => {
+  console.log('Updating selected card to -->', card);
+  setActiveCard(card);
+  // Clear results, maybe there's a way to clear the input too?
+  setResults([]);
+}
 
 //passed in results variable as a prop in SearchResultsList
   return (
@@ -34,7 +41,7 @@ const [activeCard, setActiveCard] = useState([null]);
       //then in CardSearchBar, take it in as prop */}
       <CardSearchBar setResults={setResults}></CardSearchBar>
       {/* passed in results variable as prop into CardResultsList below */}
-      <CardResultsList results={results} setActiveCard={setActiveCard} ></CardResultsList>
+      <CardResultsList results={results} handleSelection={handleSelection} ></CardResultsList>
         <h1>List of Selected Cards</h1>
         <DisplayCard results={results} activeCard={activeCard} />
        
