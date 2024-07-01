@@ -1,17 +1,27 @@
 .displayed-card {
-    background-color: rgb(252, 249, 249);
-    
+background-color: rgb(252, 249, 249);
+margin: 25px auto;
+
+
+
+}
+
+.displayed-card h2 {
+
 }
 
 .displayed-card img {
+    
+
 
 }
 
 .displayed-card p {
-
+ 
 }
 
 .text-container{
     font-size: 20px;
     align-items: center;
+
 }

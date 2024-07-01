@@ -6,10 +6,16 @@ const DisplayCard = ({activeCard}, isLoading) => {
             
             <div className='displayed-card'>
  
-                     <h2>Card Name: {activeCard.name}</h2>
+                     <h2>Name: {activeCard.name}</h2>
                       <img alt={activeCard.name} 
                       src={activeCard.imageUrl}></img>
-                      <p className='text-container'>{activeCard.text}</p>
+                      <p className='text-container'>
+
+                       
+                        {activeCard.originalType} 
+                        <br></br>
+                        {activeCard.text}</p>
+  
             
             </div>
         )
