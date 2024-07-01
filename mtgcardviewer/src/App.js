@@ -9,6 +9,7 @@ import CardResultsList from './Components/CardResultsList';
 //imported useFetch custom hook for api data fetching
 import useFetch from './Components/UseFetch';
 import DisplayCard from './Components/DisplayCard';
+
 // Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
@@ -17,13 +18,23 @@ function App() {
   const [url] = useState('https://api.magicthegathering.io/v1/cards') 
 
   //passes in data fetched from useFetch hook
-  const {error } = useFetch(url);
+  const {error} = useFetch(url);
 // create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
 
-//PROVIDE setACTIVECARD to the list that's making the click event
-//Then displaycard to be aware of the state with ActiveCard
-const [activeCard, setActiveCard] = useState([null]);
+const [activeCard, setActiveCard] = useState(null);
+
+const [input, setInput] = useState("")
+
+//function that passes in cardtakes the setActiveCard state function to parameter card
+//then passes in the card parameter
+const handleSelection = (card) => {
+  console.log('Updating selected card to -->', card);
+  setActiveCard(card);
+  // Clear results, maybe there's a way to clear the input too?
+  setResults([]);
+  setInput("")
+}
 
 //passed in results variable as a prop in SearchResultsList
   return (
@@ -32,28 +43,13 @@ const [activeCard, setActiveCard] = useState([null]);
       <div className='content'>
       {/* passed in setResults variable and modifier defined above as a prop equal to setResults
       //then in CardSearchBar, take it in as prop */}
-      <CardSearchBar setResults={setResults}></CardSearchBar>
+      <CardSearchBar setResults={setResults} input={input} setInput={setInput}></CardSearchBar>
       {/* passed in results variable as prop into CardResultsList below */}
-      <CardResultsList results={results} setActiveCard={setActiveCard} ></CardResultsList>
-        <h1>List of Selected Cards</h1>
-        <DisplayCard results={results} activeCard={activeCard} />
-       
+      <CardResultsList results={results} handleSelection={handleSelection}></CardResultsList>
+        <h1>Selected Card Below:</h1>
+        <DisplayCard results={results} activeCard={activeCard}/>
       {error && <div>{error}</div>}
-      
-
-      {/* <div className="card-list">
-      {isLoading && <div>Loading...</div>}
-        {data && data.cards.map((card) => (
-          <div key={card.id}>
-            <h2>{card.name}</h2>
-            <img alt="" src={card.imageUrl}></img>
-            </div>
-        ))}
-      </div> */}
-
-      {/* {data && data.cards.map((card) => <p key={card.id}>{card.name}</p>)}
-      {data && data.cards.map((card) =>  <img alt="" src={card.imageUrl}></img>)} */}
-        
+ 
       </div>
     </div>
   );

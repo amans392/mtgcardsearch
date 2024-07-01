@@ -1,11 +1,10 @@
 
 //useFetch setup 
 
-// https://www.youtube.com/watch?v=qdCHEUaFhBk&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=17
 import { useEffect, useState } from "react"
 //custom hooks need to start with "use"
-//like example below "useFetch"
-//passing into useFetch, the url as parameter for API
+//like in this example for "useFetch"
+//passing into useFetch, the url as parameter for API URL
 const useFetch = (url) => {
 
     const [data, setData] = useState(null);
