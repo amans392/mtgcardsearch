@@ -13,7 +13,7 @@ const CardResultsList = ({results, handleSelection}) => {
                 // return <div key={id}>{result.name}</div>
                 //returns the CardResults Component which creates a div with results
                 return <CardResults 
-                 result={result}
+                result={result}
                 handleSelection={handleSelection}
                 key={id}
                 />

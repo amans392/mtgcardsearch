@@ -15,10 +15,10 @@ import DisplayCard from './Components/DisplayCard';
 //using <Navbar /> and <Home />
 function App() {
   //stores API in URL state variable
-  const [url] = useState('https://api.magicthegathering.io/v1/cards') 
+const [url] = useState('https://api.magicthegathering.io/v1/cards') 
 
   //passes in data fetched from useFetch hook
-  const {error} = useFetch(url);
+const {error, isLoading} = useFetch(url);
 // create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
 
@@ -26,7 +26,7 @@ const [activeCard, setActiveCard] = useState(null);
 
 const [input, setInput] = useState("")
 
-//function that passes in cardtakes the setActiveCard state function to parameter card
+//function that passes in card takes the setActiveCard state function to parameter card
 //then passes in the card parameter
 const handleSelection = (card) => {
   console.log('Updating selected card to -->', card);
@@ -35,6 +35,7 @@ const handleSelection = (card) => {
   setResults([]);
   setInput("")
 }
+
 
 //passed in results variable as a prop in SearchResultsList
   return (

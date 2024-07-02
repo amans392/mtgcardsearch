@@ -14,7 +14,17 @@ const useFetch = (url) => {
 
     const [error, setError] = useState(null)
 
-    
+    //function created for fetching data from a url
+    const handleFetchData = async () => {
+        const response = await fetch(url);
+
+        if (!response.ok) throw new Error(response.statusText);
+        //removes loading message once data is fetched and displayed
+        setIsLoading(false)
+        //stores the json data as the setData state value
+        setData(await response.json()
+        );  
+    }
     //adding fetch request under useEffect hook
     useEffect(() => {
         //adding a setTimout function with a 1 second delay to display loading before card data
@@ -37,51 +47,9 @@ const useFetch = (url) => {
     //added url as a dependency
         }, [url])
         //creates a data fetch const variable using async
-        const handleFetchData = async () => {
-            const response = await fetch(url);
-
-            if (!response.ok) throw new Error(response.statusText);
-            //removes loading message once data is fetched and displayed
-            setIsLoading(false)
-            //stores the json data as the setData state value
-            setData(await response.json()
-            );
-
-            
-            
-        }
+       
     return { data, isLoading, error };
 
 };
-// }
-
-
-// const useFetch = (url) => {
-//     //states for datafetching
-//     const [data, setData] = useState(null);
-
-
-//     const [isPending, setIsPending] = useState(false);
-//     const [error, setError] = useState(null);
-//     useEffect(() => {
-//       const fetchData = async () => {
-//         setIsPending(true);
-//         try {
-//           const response = await fetch(url);
-//           if (!response.ok) throw new Error(response.statusText);
-//           const json = await response.json();
-//           setIsPending(false);
-//           setData(json);
-//           setError(null);
-//         } catch (error) {
-//           setError(`${error} Could not Fetch Data `);
-//           setIsPending(false);
-//         }
-//       };
-//       fetchData();
-//     }, [url]);
-//     return { data, isPending, error };
-
-// };
 
 export default useFetch;

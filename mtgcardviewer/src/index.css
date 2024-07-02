@@ -16,8 +16,8 @@
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
   background: white;
-
 }
+
 .navbar h1 {
   color: black;
 }
@@ -105,6 +105,28 @@ input:focus {
   align-items: center;
   }
   
+
+/* adding animation to displayed-card image
+to fade-in
+going from morphed value to user readable value
+*/
+@keyframes transition-in {
+ from {
+  
+  opacity: 0;
+  transform: rotateX(-10deg)
+ }
+  to {
+    opacity: 1;
+    transform: rotateX(0)
+  }
+}
+
+
+  .displayed-card {
+/* applying animation to class below */
+  animation: transition-in 0.75s;
+  }
   
   .text-container{
       font-size: 20px;

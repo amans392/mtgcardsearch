@@ -1,10 +1,11 @@
 import './DisplayCard.css'
 
-const DisplayCard = ({activeCard}, isLoading) => {
+const DisplayCard = ({activeCard}) => {
+
     if (activeCard)  {
         return (
             
-            <div className='displayed-card'>
+            <div className='displayed-card' >
  
                      <h2>Name: {activeCard.name}</h2>
                       <img alt={activeCard.name} 
@@ -15,6 +16,7 @@ const DisplayCard = ({activeCard}, isLoading) => {
                         {activeCard.originalType} 
                         <br></br>
                         {activeCard.text}</p>
+                        
   
             
             </div>
