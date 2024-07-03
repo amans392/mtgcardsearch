@@ -12,13 +12,10 @@ const DisplayCard = ({activeCard}) => {
                       src={activeCard.imageUrl}></img>
                       <p className='text-container'>
 
-                       
                         {activeCard.originalType} 
                         <br></br>
                         {activeCard.text}</p>
                         
-  
-            
             </div>
         )
     } else {

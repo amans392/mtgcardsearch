@@ -41,7 +41,7 @@ const CardSearchBar = ({ setResults, input, setInput }) => {
                    value &&
             
                     //checks card if card exists at current index
-                   card && 
+                   card &&
 
                    //check if card has a name
                    card.name &&
@@ -49,6 +49,8 @@ const CardSearchBar = ({ setResults, input, setInput }) => {
                    //then checks if user name converted to lowercase  includes value entered in search field
                    card.name.toLowerCase().includes(value)
                 )
+
+                
             });
             //passed in setResults variable
             //sets results variable to what we get back from API call and stored in App.js results variable

@@ -22,8 +22,8 @@ const useFetch = (url) => {
         //removes loading message once data is fetched and displayed
         setIsLoading(false)
         //stores the json data as the setData state value
-        setData(await response.json()
-        );  
+        setData(await response.json());  
+        
     }
     //adding fetch request under useEffect hook
     useEffect(() => {
