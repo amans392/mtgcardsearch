@@ -3,12 +3,12 @@
 /* base styles */
 * {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 /* navbar styling */
 .navbar {
-  
   padding: 20px;
   display: flex;
   align-items: center;

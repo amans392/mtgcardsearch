@@ -20,7 +20,7 @@ const CardSearchBar = ({ setResults, input, setInput }) => {
     const { data: json} = useFetch(url);
 
     //takes in value which is text to search for
-    
+
     const filterCard = (value) => {
         //breakdown of useFetch component
         // //calls the API stored in URL variable to fetch data
@@ -95,5 +95,4 @@ const CardSearchBar = ({ setResults, input, setInput }) => {
 }
 
 
- 
 export default CardSearchBar;
