@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
 import useFetch from "./UseFetch";
-
-import "./CardSearchBar.css"
 //taking in the setResults prop defined in app.js
 const CardSearchBar = ({ setResults, input, setInput }) => { 
     //added state variable and state setter function
