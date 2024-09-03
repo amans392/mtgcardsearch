@@ -31,7 +31,6 @@ const useFetch = (url) => {
         //set loading bar message prior to loading fetched data
         setIsLoading(true)
         setTimeout(() => {
-            console.log("useEffect Ran");
             //added error checking in case API cannot be reached
             try {
                 handleFetchData();
@@ -45,7 +44,7 @@ const useFetch = (url) => {
             //returns a prommise
         },20)
     //added url as a dependency
-        }, [url])
+        }, [])
         //creates a data fetch const variable using async
        
     return { data, isLoading, error };
