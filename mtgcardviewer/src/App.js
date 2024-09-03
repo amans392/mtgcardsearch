@@ -18,7 +18,7 @@ function App() {
 const [url] = useState('https://api.magicthegathering.io/v1/cards') 
 
   //passes in data fetched from useFetch hook
-const {error, isLoading} = useFetch(url);
+const {error} = useFetch(url);
 // create variable and variable modifier equal to empty array
 const [results, setResults] = useState([]);
 

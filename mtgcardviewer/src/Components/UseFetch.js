@@ -40,12 +40,10 @@ const useFetch = (url) => {
                 setError(`${error} Could not Fetch Data `);
             }
             
-            //sending git request to the API
+            //sending get request to the API
             //returns a prommise
         },20)
-    //added url as a dependency
         }, [])
-        //creates a data fetch const variable using async
        
     return { data, isLoading, error };
 
