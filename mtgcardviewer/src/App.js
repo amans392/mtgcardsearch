@@ -1,6 +1,3 @@
-//try selectable options from video: https://www.youtube.com/watch?v=GomD1Udf4WQ
-//also see https://www.youtube.com/watch?v=3u_ulMvTYZI
-//also https://www.youtube.com/watch?v=1cYnbYVAi_E
 import { useState } from 'react';
 //import react hooks below
 import Navbar from './Components/Navbar';
