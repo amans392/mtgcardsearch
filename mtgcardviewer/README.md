@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+Project 
+# Magic the gathering Card Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application used to search card names from the magic the gathering API below: https://api.magicthegathering.io/v1/cards
+using inputs into the search bar field.
 
-## Available Scripts
+# Search Bar Screenshot
+![Alt text](./src/Images/mtg%20card%20searched.png "MTG Card Search Bar")
 
-In the project directory, you can run:
+# Searched card screenshot
+![Alt text](./src/Images/mtg%20card%20search%20app.png "MTG Card Search Bar")
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation and Setup Instructions
+Clone down this repository. You will need node and npm installed globally on your machine.
 
-### `npm test`
+## Installation:
+```
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To Run Test Suite:
 
-### `npm run build`
+npm test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To Start Server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To Visit App:
 
-### `npm run eject`
+localhost:3000/ideas
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Reflection
+This project was created to test working with an API and getting specific data about the objects listed within that API then displaying them through an app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What did you set out to build?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I set out to build a way to search cards from an API using a search field.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Why was this project challenging and therefore a really good learning experience?
 
-## Learn More
+The challenges I faced in this project related to the API content itself and figuring out how to fetch and display specific data within it.  Took some time finding the method to fetch from the API, which gave me insight into the methods available for fetching data, as well as, what can be done with the data when it has been fetched, like finding specific properties of the API data that were releveant to what I'm working with.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## What were some unexpected obstacles?
+As stated above methods for fetching required some digging for me to find the right method for fetching and specifically interacting with the API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## What tools did you use to implement this project?
 
-### Code Splitting
+The Technologies used in this project are the React 18.2.0 framework, ReactJS and hosting using Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I used create-react-app boilerplate as it's setup is simple and I plan to branch out to other options as I work more with React and Javascript.
