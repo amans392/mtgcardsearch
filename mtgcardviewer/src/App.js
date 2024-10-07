@@ -7,7 +7,6 @@ import CardResultsList from './Components/CardResultsList';
 import useFetch from './Components/UseFetch';
 import DisplayCard from './Components/DisplayCard';
 
-// Expected output: Array ["exuberant", "destruction", "present"]
 //Navbar and Home components nested in the return statement below app
 //using <Navbar /> and <Home />
 function App() {
