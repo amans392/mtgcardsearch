@@ -5,11 +5,12 @@ A web application used to search card names from the magic the gathering API bel
 using inputs into the search bar field.
 
 # Search Bar Screenshot
-![Alt text](./src/Images/mtg%20card%20searched.png "MTG Card Search Bar")
+
+![Alt text](/mtgcardviewer/src/Images/mtg%20card%20search.png "MTG Card Search Bar")
+
+![Alt text](/mtgcardviewer/src/Images/mtg%20card%20search%20results.png "MTG Card Search Bar")
 
 # Searched card screenshot
-![Alt text](./src/Images/mtg%20card%20search%20app.png "MTG Card Search Bar")
-
 
 
 ## Installation and Setup Instructions
@@ -45,6 +46,8 @@ The challenges I faced in this project related to the API content itself and fig
 
 ## What were some unexpected obstacles?
 As stated above methods for fetching required some digging for me to find the right method for fetching and specifically interacting with the API.
+
+Noticed that the API has duplicate names of cards one with an image and one without that shows up in search results.  Will have to look into a different API for future mtg related project.
 
 ## What tools did you use to implement this project?
 
