@@ -8,9 +8,11 @@ using inputs into the search bar field.
 
 ![Alt text](/mtgcardviewer/src/Images/mtg%20card%20search.png "MTG Card Search Bar")
 
+# Search Results screenshot
+
 ![Alt text](/mtgcardviewer/src/Images/mtg%20card%20search%20results.png "MTG Card Search Bar")
 
-# Searched card screenshot
+
 
 
 ## Installation and Setup Instructions
