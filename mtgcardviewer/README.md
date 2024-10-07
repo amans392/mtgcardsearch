@@ -13,7 +13,7 @@ using inputs into the search bar field.
 
 
 ## Installation and Setup Instructions
-Clone down this repository. You will need node and npm installed globally on your machine.
+Clone down this repository. You will need node 20.10.0 and npm 10.2.5 installed globally on your machine.
 
 ## Installation:
 ```
