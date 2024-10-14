@@ -44,12 +44,15 @@ I set out to build a way to search cards from an API using a search field.
 
 ## Why was this project challenging and therefore a really good learning experience?
 
-The challenges I faced in this project related to the API content itself and figuring out how to fetch and display specific data within it.  Took some time finding the method to fetch from the API, which gave me insight into the methods available for fetching data, as well as, what can be done with the data when it has been fetched, like finding specific properties of the API data that were releveant to what I'm working with.
+The challenges I faced in this project related to the API content itself and finding the right method to work with the fetched API data I needed.
+
+It took a bit of research the find the methods suitable for me to work with the API Data, which gave me insight into the methods available for fetching and working with specifc parts of API data through filtering and mapping.
 
 ## What were some unexpected obstacles?
-As stated above methods for fetching required some digging for me to find the right method for fetching and specifically interacting with the API.
+As stated above methods for fetching required some digging for me to find the right method for  finding the right method for working with the fetched API data I needed.
 
-Noticed that the API has duplicate names of cards one with an image and one without that shows up in search results.  Will have to look into a different API for future mtg related project.
+
+I noticed that the API has duplicate names of cards one with an image and one without that shows up in search results.  Will have to look into a different API for future mtg related project.
 
 ## What tools did you use to implement this project?
 
