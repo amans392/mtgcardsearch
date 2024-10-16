@@ -40,7 +40,8 @@ This project was created to test working with an API and getting specific data a
 
 ## What did you set out to build?
 
-I set out to build a way to search cards from an API using a search field.
+I set out to build an application that queries an API to fetch large amounts of external data.
+ The user can then filter through this data to find specific results.  The API contained a sample set of magic the gathering cards and their various individual qualities.
 
 ## Why was this project challenging and therefore a really good learning experience?
 
